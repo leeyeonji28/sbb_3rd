@@ -18,3 +18,19 @@ CREATE TABLE Answer(
     create_date DATETIME NOT NULL,
     question_id INT(11) UNSIGNED NOT NULL
 );
+
+# 질문 데이터 생성
+INSERT INTO Question SET
+`subject` = 'question1',
+content = 'content1',
+create_date = NOW();
+
+INSERT INTO Question SET
+    `subject` = 'question2',
+content = 'content2',
+create_date = NOW();
+
+INSERT INTO Question SET
+    `subject` = 'question3',
+content = 'content3',
+create_date = NOW();
