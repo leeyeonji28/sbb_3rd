@@ -5,6 +5,8 @@ import com.mysite3.sbb_3rd.question.dao.QuestionRepository;
 import com.mysite3.sbb_3rd.question.domain.Question;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 import java.util.List;
@@ -26,5 +28,13 @@ public class QuestionService {
         } else {
             throw new DataNotFoundException("question noe found");
         }
+    }
+
+    public void create(String subject, String content){
+        Question q = new Question();
+        q.setSubject(subject);
+        q.setContent(content);
+        q.setCreateDate(LocalDateTime.now());
+        this.questionRepository.save(q);
     }
 }
